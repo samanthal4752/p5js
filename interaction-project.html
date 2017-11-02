@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+    var centerX;
+    var centerY;
+        function setup() {
+            createCanvas(800,600);
+           background(random(255),random(255),random(255));
+        }
+
+        function draw() {
+            centerX=mouseX
+            centerY=mouseY
+        }
+        function keyPressed(){
+            fill(random(255),random(255),random(255));
+            ellipse(centerX+100,centerY+200,150,100);//left eye
+            ellipse(centerX+270,centerY+200,150,100);//right eye
+            ellipse(centerX+200,centerY+300,100,100);//nose
+            rect(centerX+100,centerY+400,200,100)//rectangle mouth
+        }
+        function mouseDragged(){
+            
+            // ellipse(centerX+600,centerY+100,600,600);
+            fill(random(255),random(255),random(255));
+            strokeWeight(5);
+            ellipse(centerX+100,centerY+200,150,100); //left eye
+            ellipse(centerX+100,centerY+200,60,60);
+            ellipse(centerX+270,centerY+200,150,100);// right eye
+            ellipse(centerX+270,centerY+200,60,60);
+            ellipse(centerX+200,centerY+300,100,100);//nose
+            ellipse(centerX+200,centerY+450,200,100);//mouth
+            ellipse(centerX+200,centerY+450,100,50);
+            
+            
+        
+        }
+            
+        
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/samanthal4752/p5js/blob/master/interaction-project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+</html>
