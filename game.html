@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        var t;
+
+        function setup() {
+            createCanvas(600, 600);
+
+            t = 10
+            //house
+            strokeWeight(7);
+            rect(300, 300, 290, 300); //building
+            beginShape(); //roof
+            vertex(300, 300);
+            vertex(450, 150);
+            vertex(585, 300);
+            endShape(CLOSE);
+            rect(500, 350, 30, 70); //right side window
+            rect(350, 350, 30, 70); //left side window
+            rect(420, 510, 60, 90) //door
+            //tree
+            line(100, 400, 100, 600);
+            line(200, 400, 200, 600);
+            ellipse(150, 350, 200, 100);
+            //sun
+            ellipse(100,100,85,90);
+
+        }
+
+        function draw() {
+            strokeWeight(2);
+
+        }
+
+        function mouseDragged() {
+
+            frameRate(70);
+            ellipse(mouseX, mouseY, t, t); //pen
+
+        }
+
+        function keyPressed() {
+            //press certain keys to change the color
+            if (key.toLowerCase() == "r") {
+                fill(255, 0, 0); //red pen
+                stroke("red");
+
+            }
+            if (key.toLowerCase() == "g") {
+                fill("green"); //green pen
+                stroke("green");
+
+            }
+            if (key.toLowerCase() == "b") {
+                fill(0, 0, 255); //blue pen
+                stroke("blue");
+            }
+            if (key.toLowerCase() == "o") {
+                fill(226, 129, 18); //orange pen
+                stroke(226, 129, 18);
+            }
+            if (key.toLowerCase() == "p") {
+                fill(255, 0, 199); //pink pen
+                stroke(255, 0, 199);
+            }
+            if(key.toLowerCase()=="y"){
+                fill(255,255,0); //yellow pen
+                stroke(255,255,0);
+            }
+            if(key.toLowerCase() == "s"){
+            fill(94,56,56);//brown pen
+            stroke(94,56,56);
+        }
+        if(key.toLowerCase()=="u"){
+            fill(174,0,255);//purple pen
+            stroke(174,0,255);
+        }
+        
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/USERNAME/p5js/blob/master/FILENAME.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
