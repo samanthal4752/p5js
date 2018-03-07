@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        var points = [0]; //points scored
+        var morePoints; //add points
+
+        function setup() {
+            createCanvas(500, 500);
+        }
+
+        function draw() {
+            var time = Math.floor(frameCount / 60); //set time limit
+            background(0);
+            fill(255);
+            textSize(100);
+
+            for (var i = 0; i < points.length; i++) { //keep track of score
+
+                if (time <= 20) {
+                    background(0);
+                    text("Points: ", 100, 100)
+                    text("Time: " + time, 100, 400); //tell time
+                    text(i, 200, 250); //show new score
+                }
+                else {
+                    background(0);
+                    text("Points: ", 100, 100)
+                    text("Times Up", 50, 400) //change once time is up
+                    text(i, 200, 250); //tell score
+                    noLoop()
+                }
+            }
+
+        }
+
+        function keyPressed() {
+            if (keyCode == 32) { //32 is space key
+                points.push(morePoints); //add score
+            }
+        }
+    </script>
+</head>
+
+<body>
+<form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/rileyk0998/p5js/blob/master/circuits-target.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
